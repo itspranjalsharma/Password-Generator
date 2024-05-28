@@ -25,7 +25,7 @@ function App() {
  
   return (
     <>
-    <div className=' w-full h-40 max-w-md mx-auto shadow-md  rounded-lg px-4 my-15 text-orange-500 bg-gray-700'> 
+    <div className=' w-4/5 h-40 max-w-md mx-auto shadow-md  rounded-lg px-4 my-15 text-orange-500 bg-gray-700'> 
       <h1 className='text-white text-center my-7 mx-3'> Password Generator </h1>
      <div className='flex shadow rounded-lg overflow-hidden mb-4'>
        <input type="text"
@@ -36,7 +36,7 @@ function App() {
         />
         <button className='outline-none bg-blue-700 text-white px-3 py0.5 shrink-0' > copy</button>
       </div>
-      <div className="flex text-sm gap-x-2"></div>
+      <div className="flex text-sm gap-x-2">
       <div className="flex items-center gap-x-1">
         <input 
         type="rang" 
@@ -48,15 +48,29 @@ function App() {
         />
         <label > Length: {length}</label>
       </div>
-        <input type="checkbox"
-          defaultChecked={numberAllow}
-          id='numberInput'
-          onChange={() =>{
-            setnumberAllow((prev) =>!prev);
-          }}
-          />
+         <div className=" flex items-center gap-x-1 ">
+          <input type="checkbox"
+            defaultChecked={numberAllow}
+            id='numberInput'
+            onChange={() =>{
+              setnumberAllow((prev) =>!prev);
+            }}
+            />
 
-          <label htmlFor="numberInput">Numbers</label>
+            <label htmlFor="numberInput">Numbers</label>
+          </div>
+          <div className=" flex items-center gap-x-1 ">
+              <input type="checkbox"
+                defaultChecked={charAllow}
+                id='characterInput'
+                onChange={() =>{
+                  setCharAllow((prev) =>!prev);
+                }}
+                />
+
+                <label htmlFor="characterInput">Charaters</label>
+          </div>
+        </div>
 
     </div>
     </>
